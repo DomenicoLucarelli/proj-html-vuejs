@@ -3,13 +3,14 @@ import AppInfo from './components/AppInfo.vue';
 
 import AppHeader from './components/AppHeader.vue';
 import AppServices from './components/AppServices.vue';
+import AppNetwork from './components/AppNetwork.vue';
 
 
 export default {
     data() {
         return {};
     },
-    components: { AppInfo, AppHeader, AppServices }
+    components: { AppInfo, AppHeader, AppServices, AppNetwork }
 }
 </script>
 
@@ -20,6 +21,8 @@ export default {
   <AppHeader></AppHeader>
   
   <AppServices></AppServices>
+
+  <AppNetwork></AppNetwork>
 
 </template>
 
