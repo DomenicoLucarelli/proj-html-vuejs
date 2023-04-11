@@ -1,17 +1,23 @@
 <script>
+import AppInfo from './components/AppInfo.vue';
+
+import AppHeader from './components/AppHeader.vue';
+
+
 export default {
-  data() {
-    return {
-      
-    }
-  },
+    data() {
+        return {};
+    },
+    components: { AppInfo , AppHeader, }
 }
 </script>
 
 <template>
-  <div>
-    
-  </div>
+
+  <AppInfo></AppInfo>
+
+  <AppHeader></AppHeader>
+
 </template>
 
 <style lang="scss">
