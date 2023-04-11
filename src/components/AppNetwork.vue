@@ -35,56 +35,97 @@ export default {
 
 <template>
 
-    <div class="container">
+    <div class="ext-container">
 
-        <div class="left-section">
+        <img class="bullets1" src="img/bullets.png" alt="">
 
-            <div class="inner-content">
-                <h5>About The Network</h5>
         
-                <div class="title">
-        
-                    <h1><mark>The </mark> Company </h1>
-        
+        <div class="container">
+            
+    
+            <div class="left-section">
+    
+                <div class="inner-content">
+                    <h5>About The Network</h5>
+            
+                    <div class="title">
+            
+                        <h1><mark>The </mark> Company </h1>
+            
+                    </div>
+            
+                    
+                    <p>
+                        For 12 years we have been providing audit and warranty, financial advice, 
+                        risk advice; taxes and related services for select clients
+                    </p>
+                    
+                    <div class="card-container">
+    
+                        <NetworkCard v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title" :info="card.des"></NetworkCard>
+    
+                    </div>
+    
+                    <div class="btn-container">
+                        <div class="btn1">Get in touch</div>
+                        <div class="btn2">Read More</div>
+                    </div>
                 </div>
-        
-                
-                <p>
-                    For 12 years we have been providing audit and warranty, financial advice, 
-                    risk advice; taxes and related services for select clients
-                </p>
-                
-                <div class="card-container">
-
-                    <NetworkCard v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title" :info="card.des"></NetworkCard>
-
-                </div>
-
-                <div class="btn-container">
-                    <div class="btn1">Get in touch</div>
-                    <div class="btn2">Read More</div>
-                </div>
+    
+    
             </div>
-
-
+    
+            <div class="right-section">
+    
+                <img src="img/about-4.jpg" alt="">
+    
+            </div>
+    
+    
         </div>
 
-        <div class="right-section">
+        <img class="bullets2" src="img/bullets.png" alt="">
 
-            <img src="img/about-4.jpg" alt="">
-
-        </div>
 
     </div>
+    
 
 </template>
 
 <style lang="scss" scoped >
+
+.ext-container{
+    position: relative;
+
+    .bullets1{
+        width: 100px;
+        
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        opacity: 0.8;
+    }
+
+    .bullets2{
+        width: 100px;
+        
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50% , 50%);
+        opacity: 0.8;
+
+
+    }
+}
     .container{
         
         background-color: #111117;
-
+        
         display: flex;
+        
+        
         
         .left-section{
             width: 50%;

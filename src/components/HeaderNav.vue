@@ -21,7 +21,7 @@ export default {
         <div class="dx-nav">
 
             <div class="links">
-                <a href="#" v-for="(link, index) in links" :key="index">{{ link }}</a>
+                <a :href="'#' + link " v-for="(link, index) in links" :key="index">{{ link }}</a>
             </div>
     
             <button class="btn1">Get in touch</button>
