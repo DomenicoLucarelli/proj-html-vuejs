@@ -2,13 +2,14 @@
 import AppInfo from './components/AppInfo.vue';
 
 import AppHeader from './components/AppHeader.vue';
+import AppServices from './components/AppServices.vue';
 
 
 export default {
     data() {
         return {};
     },
-    components: { AppInfo , AppHeader, }
+    components: { AppInfo, AppHeader, AppServices }
 }
 </script>
 
@@ -17,6 +18,8 @@ export default {
   <AppInfo></AppInfo>
 
   <AppHeader></AppHeader>
+  
+  <AppServices></AppServices>
 
 </template>
 

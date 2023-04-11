@@ -63,7 +63,7 @@ export default {
             display: flex;
             justify-content: space-between;
             
-            max-width: 1100px;
+            max-width: 900px;
             margin: auto;
 
             .right-section{

@@ -1,10 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   
-  color: rgba(255, 255, 255, 0.87);
+  color: black;
   
 
   font-synthesis: none;
@@ -17,5 +17,52 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: #21333e;
+}
+
+.btn1{
+  background-color: #058283;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: .8em;
+  text-transform: uppercase;
+  padding: .9em 1.2em;
+
+  &:hover{
+    background-color: #00a6a6;
+  }
+}
+
+.btn2{
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid #00a6a6;
+  border-radius: 5px;
+  color: #00a6a6;
+  font-size: .8em;
+  text-transform: uppercase;
+  padding: .9em 1.2em;
+
+  &:hover{
+    background-color: #00a6a6;
+    color: white;
+  }
+}
+
+mark{
+  background-color: #cce3de;
+  color: #058283;
+  padding: .2em;
 }
