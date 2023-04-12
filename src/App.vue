@@ -7,13 +7,16 @@ import AppNetwork from './components/AppNetwork.vue';
 import AppProjects from './components/AppProjects.vue';
 import AppResults from './components/AppResults.vue';
 import AppSponsor from './components/AppSponsor.vue';
+import AppMessage from './components/AppMessage.vue';
+import AppFooter from './components/AppFooter.vue';
+
 
 
 export default {
     data() {
         return {};
     },
-    components: { AppInfo, AppHeader, AppServices, AppNetwork, AppProjects, AppResults, AppSponsor }
+    components: { AppInfo, AppHeader, AppServices, AppNetwork, AppProjects, AppResults, AppSponsor, AppMessage, AppFooter, }
 }
 </script>
 
@@ -32,6 +35,10 @@ export default {
   <AppResults id="Results"></AppResults>
   
   <AppSponsor></AppSponsor>
+
+  <AppMessage></AppMessage>
+
+  <AppFooter></AppFooter>
 
 </template>
 
