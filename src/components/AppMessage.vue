@@ -11,8 +11,11 @@ export default {
 
 <template>
     <div class="container">
+
         <div class="left-box">
+
             <div class="text-box">
+
                 <h5>Send a message</h5>
 
                 <h2>Get in <mark>Touch</mark></h2>
@@ -22,19 +25,31 @@ export default {
             </div>
 
             <div class="input-box">
+
                 <input type="text" placeholder="Name">
+
                 <input type="email" placeholder="Email">
+
                 <input type="tel" placeholder="Phone">
+
                 <select>
+
                     <option selected >More Info</option>
+
                     <option value="1">One</option>
+
                     <option value="2">Two</option>
+
                     <option value="3">Three</option>
+
                 </select>
+
                 <input type="text" size="50" placeholder="Message">
 
             </div>
+
             <button class="btn1">SEND</button>
+            
         </div>
 
         <div class="right-box">

@@ -57,7 +57,7 @@ export default {
         .title{
             max-width: 900px;
             margin:  auto;
-            padding: 100px 0;
+            padding: 100px 0 50px 0;
             text-align: center;
 
             h5{
@@ -82,6 +82,7 @@ export default {
             display: flex;
             justify-content: center;
             gap: 50px;
+            padding-bottom: 100px;
 
             .result{
                 display: flex;
