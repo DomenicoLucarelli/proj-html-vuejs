@@ -60,7 +60,9 @@ export default {
             font-size: .8em;
         }
 
-        
+        .btn1{
+            a{color: white;}
+        }
         
     }
 

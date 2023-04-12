@@ -5,7 +5,8 @@ export default {
 
     data() {
         return {
-            
+
+            isHover: false
         }
     },
 
@@ -13,16 +14,30 @@ export default {
         img: String,
         title: String,
         text: String,
-    }
+        back: String,
+    },
+
+    methods: {
+
+        hoverChange(){
+
+            this.isHover = !this.isHover  
+           
+        },
+
+        
+    },
 }
 </script>
 
 <template>
-    <div class="card" :style="{backgroundImage: 'url('+ img +')'}">
+    <div class="card" :style="{backgroundImage: 'url('+ img +')'}" @mouseover="hoverChange()" @mouseleave="hoverChange()">
 
-        <div class="text-container">
+        <div class="text-container" :class="back">
 
             <h3>{{ title }}</h3>
+
+            <span v-if="isHover == true">{{ text }}</span>
 
         </div>
         
@@ -39,18 +54,46 @@ export default {
 
     border-radius: 10px;
     overflow: hidden;
+    cursor: pointer;
 
+    .active{
+
+        background-color: rgba(0, 0, 0, 0.329);
+    }
+
+    .not-active{
+        
+        background-color: rgba(0, 0, 0, 0.692);
+
+    }
     .text-container{
 
         height: 100%;
         display: flex;
-        align-items:flex-end;
-        background-color: rgba(0, 0, 0, 0.479);
-        padding-bottom: 20px;
+        flex-direction: column;
+        justify-content:flex-end;
+        
+        padding: 20px;
+        font-weight: bold;
+       
+        &:hover h3{
+            transform: translateY(-50px);
+            transition: 1s linear;
+        }
+        &:hover span{
+            transform: translateY(-50px);
+            transition: 1s linear;
+        }
 
     }
     h3{
         color: white;
+        
+    }
+    span{
+        color: #b9b8b9;
+        font-size: .9em;
+        
     }
 
     

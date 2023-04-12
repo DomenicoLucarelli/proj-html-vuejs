@@ -1,51 +1,62 @@
 <script>
 import ProjectsCard from './ProjectsCard.vue';
 import ProjectsNav from './ProjectsNav.vue';
+import {store} from '../store.js'
 
 export default {
     name: "AppProjects",
     data() {
         return {
+            store,
+
             cards: [
                 {
                     image:'img/project-1.jpg',
                     title:'Academic professional program in social media',
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,2] ,
                 },
 
                 {
                     image:'img/project-2.jpg',
                     title:"President's speech at the annual meeting" ,
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit', 
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,4], 
                 },
 
                 {
                     image:'img/project-3.jpg',
                     title:'International trip business in shanghai',
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit', 
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,5] , 
                 },
 
                 {
                     image:'img/project-4.jpg',
                     title:'Technology workshop with education theme',
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit', 
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,6], 
                 },
 
                 {
                     image:'img/project-5.jpg',
                     title:'Donation of clothes and food to the partner NGO',
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit', 
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,1], 
                 },
 
                 {
                     image:'img/project-6.jpg',
                     title:'Confraternization of the procurament team',
-                    des: 'lorem ipsum dolor sit amet consectetur dipiscing elit', 
+                    des: 'Lorem ipsum dolor sit amet consectetur dipiscing elit',
+                    correspondence:[0,3], 
                 },
             ]
         };
     },
-    components: { ProjectsNav, ProjectsCard }
+    components: { ProjectsNav, ProjectsCard },
+
+    
 }
 </script>
 
@@ -60,7 +71,7 @@ export default {
 
         <div class="cards-container">
 
-            <ProjectsCard v-for="(card, index) in cards" :key="index" :img="card.image" :title="card.title"></ProjectsCard>
+            <ProjectsCard v-for="(card, index) in cards" :key="index" :img="card.image" :title="card.title" :text="card.des" :back="card.correspondence.includes(store.navIndex) ? 'active' : 'not-active'"></ProjectsCard>
 
         </div>
     </div>
@@ -90,6 +101,10 @@ export default {
         flex-wrap: wrap;
         gap: 20px;
     }
+}
+
+.active{
+    background-color: black;
 }
     
 </style>

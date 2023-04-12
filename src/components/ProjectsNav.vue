@@ -1,9 +1,13 @@
 <script>
+import { store } from '../store'
+
 export default {
 
     name: 'ProjectsNav',
     data() {
         return {
+            store,
+
             links: [
                 {   text: 'All',
                     selected: true
@@ -49,6 +53,9 @@ export default {
                 this.links[i].selected = false
             }
             this.links[index].selected = true
+
+            store.navIndex = index
+            
         }
     }
 }
@@ -56,7 +63,7 @@ export default {
 
 <template>
     <div class="nav">
-        <a v-for="(link, index) in links" :key="index" @click="isClick(index)" :style="link.selected == true ? {backgroundColor: '#daeced'} : '' ">{{ link.text }}</a>
+        <a v-for="(link, index) in links" :key="index" @click="isClick(index)" :style="link.selected == true ? {backgroundColor: '#daeced'} : '' " >{{ link.text }}</a>
     </div>
 </template>
 
