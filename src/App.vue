@@ -36,7 +36,7 @@ export default {
   
   <AppSponsor></AppSponsor>
 
-  <AppMessage></AppMessage>
+  <AppMessage id="message"></AppMessage>
 
   <AppFooter></AppFooter>
 

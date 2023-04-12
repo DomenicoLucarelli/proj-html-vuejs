@@ -24,7 +24,7 @@ export default {
                 <a :href="'#' + link " v-for="(link, index) in links" :key="index">{{ link }}</a>
             </div>
     
-            <button class="btn1">Get in touch</button>
+            <button class="btn1"><a href="#message">Get in touch</a></button>
 
         </div>
         

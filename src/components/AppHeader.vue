@@ -4,9 +4,28 @@ import HeaderNav from './HeaderNav.vue';
 export default {
     name: "AppHeader",
     data() {
-        return {};
+        return {
+            words:['Ready', 'Professional','Expert'],
+            index:0,
+        };
     },
-    components: { HeaderNav }
+
+    components: { HeaderNav },
+
+    methods:{
+        changeTitle(){
+            this.index++
+
+            if(this.index == this.words.length){
+                this.index = 0
+            }
+        }
+    },
+
+    mounted() {
+        setInterval(this.changeTitle, 5000)
+    },
+
 }
 </script>
 
@@ -16,15 +35,29 @@ export default {
         <HeaderNav></HeaderNav>
 
         <div class="text-box">
-            <h1>Ready <mark>Team</mark> </h1>
+            <h1>{{ words[index] }} <mark>Team</mark> </h1>
 
             <p>No matter what your company needs, we will be <br> ready to assist you in the best possible way</p>
 
             <div class="btn-container">
                 <button class="btn1">Get in touch</button>
                 <button class="btn2">Read More</button>
+
             </div>
 
+            <div class="carusell">
+                <div class="active first" :style="index == 0 ? {backgroundColor:'#058283'} : {backgroundColor: 'white'}">
+
+                </div>
+
+                <div class="active second" :style="index == 1 ? {backgroundColor:'#058283'} : {backgroundColor: 'white'}">
+
+                </div>
+
+                <div class="active third" :style="index == 2 ? {backgroundColor:'#058283'} : {backgroundColor: 'white'}">
+                    
+                </div>
+            </div>
         </div>
 
     </div>
@@ -39,6 +72,7 @@ export default {
     background-size: 2700px;
 
     .text-box{
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -54,6 +88,31 @@ export default {
             display: flex;
             gap: 10px;
         }
+
+        .carusell{
+
+            .active{
+                border: 1px solid grey;
+                border-radius: 10px;
+                width: 6px;
+                height: 20px;
+                right: 20px;
+                position: absolute;
+            }
+
+            .first{
+                top: 30%;
+            }
+            .second{
+                top: 45%;
+            }
+
+            .third{
+                top: 60%;
+            }
+        }
+
+        
     }
 }
     
