@@ -3,7 +3,23 @@ export default {
     name: 'AppMessage',
     data() {
         return {
-            
+
+            isClick: false,
+
+            userName: '',
+            userEmail:'',
+            userTel:'',
+            userInfo:'More Info',
+            userMessage:'',
+        }
+    },
+
+    methods: {
+        changeVisibility(){
+            if(this.userName != '' && this.userEmail !='' && this.userTel !='' && this.userInfo !='' && this.userMessage !=''){
+
+                this.isClick = !this.isClick
+            }
         }
     },
 }
@@ -24,17 +40,17 @@ export default {
 
             </div>
 
-            <div class="input-box">
+            <div class="input-box" v-if="isClick == false">
 
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Name" v-model="userName" >
 
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" v-model="userEmail">
 
-                <input type="tel" placeholder="Phone">
+                <input type="tel" placeholder="Phone" v-model="userTel">
 
-                <select>
+                <select  v-model="userInfo">
 
-                    <option selected >More Info</option>
+                    <option selected>More Info</option>
 
                     <option value="1">One</option>
 
@@ -44,11 +60,21 @@ export default {
 
                 </select>
 
-                <input type="text" size="50" placeholder="Message">
+                <input type="text" size="50" placeholder="Message" v-model="userMessage">
 
             </div>
 
-            <button class="btn1">SEND</button>
+            <button class="btn1" @click="changeVisibility()" v-if="isClick == false">SEND</button>
+
+            <div class="alert" v-if="isClick == true">
+                <span>
+
+                    Your message has been send.
+                </span>
+
+                <button class="btn1" @click="changeVisibility()">Send Another message</button>
+                
+            </div>
             
         </div>
 
@@ -113,7 +139,20 @@ export default {
             span{
                 color: #9f9db2;
                 font-size: .9em;
-            }           
+            }   
+            
+        }
+        .alert{
+            padding:  50px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+
+            span{
+                color: #9f9db2;
+            }
         }
 
         .input-box{
