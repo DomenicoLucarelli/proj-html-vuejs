@@ -13,6 +13,7 @@ export default {
     components: { HeaderNav },
 
     methods:{
+        // funzione che cambia l'index per il carosello : lo aumenta fino a quando non raggiungela lunghezza dell'array words e poi lo riazzera
         changeTitle(){
             this.index++
 
@@ -21,7 +22,7 @@ export default {
             }
         }
     },
-
+    // al caricamento della pagina si avvia un setIntervall che richiama la funzione che mi fa aumentare l'indice a intervalli di 5 secondi
     mounted() {
         setInterval(this.changeTitle, 5000)
     },

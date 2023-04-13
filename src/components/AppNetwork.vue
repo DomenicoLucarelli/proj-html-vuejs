@@ -5,6 +5,7 @@ export default {
     name: "AppNetwork",
     data() {
         return {
+            // array di oggetti per le cards
             cards: [
                 {
                     image: "fa-solid fa-medal",
@@ -61,7 +62,7 @@ export default {
                     </p>
                     
                     <div class="card-container">
-    
+                        <!-- creo tante card quanti sono gli elementi di cards e passo al componente NetworkCard le informazioni tramite props -->
                         <NetworkCard v-for="(card, index) in cards" :key="index" :image="card.image" :title="card.title" :info="card.des"></NetworkCard>
     
                     </div>

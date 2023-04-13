@@ -8,7 +8,8 @@ export default {
             
         }
     },
-
+    // predispongo le props che mi verranno passate da AppNetwork
+    
     props: {
         image: String,
         title: String,
@@ -21,10 +22,13 @@ export default {
     <div class="card">
         <div class="top">
             <i :class="image"></i>
+            <!-- passo la prop title -->
             <h3>{{title}}</h3>
         </div>
 
         <div class="middle">
+            <!-- passo la prop info-->
+
             {{ info }}
         </div>
         

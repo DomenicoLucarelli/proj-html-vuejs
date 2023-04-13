@@ -8,7 +8,7 @@ export default {
             
         }
     },
-
+    // predispongo le props
     props: {
         img: String,
         title: String,
@@ -21,7 +21,7 @@ export default {
     <div class="card">
 
         <div class="card-top">
-
+            <!-- passo la prop img -->
             <img :src="img" alt="">
 
             <div class="arrow-box">
@@ -33,11 +33,11 @@ export default {
         </div>
 
         <div class="card-title">
-            
+            <!-- passo la prop title -->
            <h3> {{ title }}</h3>
         
         </div>
-
+        <!-- passo la prop info -->
         <div class="card-description">{{ info }}</div>
         
     </div>

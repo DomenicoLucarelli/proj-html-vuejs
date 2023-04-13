@@ -3,6 +3,8 @@ export default {
     name:'AppResults',
     data() {
         return {
+
+            // array di oggetti per la visualizzazione dei risultati
             results: [
                 {
                     num: 128,
@@ -38,6 +40,7 @@ export default {
         </div>
 
         <div class="results">
+            <!-- creo tanti div quanti sono gli elmenti nell'array results -->
             <div class="result" v-for="(result, index) in results" :key="index">
                 <span class="data">{{result.num}}</span>
                 <span class="info">{{result.text}}</span>

@@ -10,7 +10,7 @@ export default {
             
         }
     },
-
+    // predispongo le props che mi verranno passate da AppFooter
     props: {
         title: String,
         items: Array,
@@ -21,11 +21,12 @@ export default {
 <template>
     <div class="card">
         <div class="title">
+            <!-- passo la props title -->
             <h2>{{ title }}</h2>
         </div>
 
         <ul>
-
+            <!-- creo un ciclo per ogni elemento presente nella props items che è un array e visualizzo i suoi elementi -->
            <li v-for="(item, index) in items" :key="index"> <i class="fa-solid fa-chevron-right"></i> {{ item }}</li>
           
         </ul>

@@ -5,6 +5,7 @@ export default {
     name: "AppServices",
     data() {
         return {
+            // array di oggetti con le proprietà di ogni card
             cards : [
                 {
                     image: 'img/svg-1.svg',
@@ -78,7 +79,7 @@ export default {
         </div>
 
         <div class="services-card">
-
+            <!-- creo tante card quanti sono gli elementi nell'array cards e passo le info a ServiceCard con le props -->
             <ServicesCard v-for="(card, index) in cards" :key="index" :img="card.image" :title="card.title" :info="card.description"></ServicesCard>
 
         </div>

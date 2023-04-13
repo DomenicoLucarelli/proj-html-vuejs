@@ -3,9 +3,9 @@ export default {
     name: 'AppMessage',
     data() {
         return {
-
+            // variabile booleana che cambia al click del button
             isClick: false,
-
+            // variabili collegate agli input con il v-model
             userName: '',
             userEmail:'',
             userTel:'',
@@ -15,11 +15,14 @@ export default {
     },
 
     methods: {
+        // funzipne che cambia il valore di isClick
         changeVisibility(){
+            // controllo se l'utente non lascia gli input vuoti
             if(this.userName != '' && this.userEmail !='' && this.userTel !='' && this.userInfo !='' && this.userMessage !=''){
 
                 this.isClick = !this.isClick
             }else{
+                // se li lascia vuoti compare un alert
                 alert('completa tutti i campi per inviare il messaggio')
             }
         }
@@ -42,7 +45,7 @@ export default {
 
             </div>
 
-            <form class="input-box" v-if="isClick == false" >
+            <form class="input-box" v-if="isClick == false">
 
                 <input type="text" placeholder="Name" v-model="userName" require>
 

@@ -4,7 +4,7 @@ export default {
     name: 'HeaderNav',
     data() {
         return {
-            
+            // array di link
             links : ['Home', 'Services', 'About', 'Projects', 'Results'],
         }
     },
@@ -21,6 +21,7 @@ export default {
         <div class="dx-nav">
 
             <div class="links">
+                <!-- creo tanti link quanti sono gli elementi di link,ogni link è ancorato ad un elemento corrispondente in App.vue -->
                 <a :href="'#' + link " v-for="(link, index) in links" :key="index">{{ link }}</a>
             </div>
     

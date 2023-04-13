@@ -1,11 +1,11 @@
 <script>
 import FooterCard from './FooterCard.vue';
-import {store} from '../store.js'
+
 export default {
     name: "AppFooter",
     data() {
         return {
-            
+            // creo array di oggetti con il titolo della lista e i suoi elementi
             links: [
                 
                 { 

@@ -5,11 +5,11 @@ export default {
 
     data() {
         return {
-
-            isHover: false
+            
+         
         }
     },
-
+    // predispongo le props
     props:{
         img: String,
         title: String,
@@ -17,27 +17,19 @@ export default {
         back: String,
     },
 
-    methods: {
-
-        hoverChange(){
-
-            this.isHover = !this.isHover  
-           
-        },
-
-        
-    },
+    
 }
 </script>
 
 <template>
-    <div class="card" :style="{backgroundImage: 'url('+ img +')'}" @mouseover="hoverChange()" @mouseleave="hoverChange()">
+    <!-- passo l'immagine di background tramite props -->
+    <div class="card" :style="{backgroundImage: 'url('+ img +')'}">
 
         <div class="text-container" :class="back">
 
             <h3>{{ title }}</h3>
-
-            <span v-if="isHover == true">{{ text }}</span>
+            <!-- la props text viene visualizzata solo quando isHover è true -->
+            <span >{{ text }}</span>
 
         </div>
         
@@ -75,24 +67,28 @@ export default {
         
         padding: 20px;
         font-weight: bold;
+        
+        position: relative;
        
         &:hover h3{
             transform: translateY(-50px);
-            transition: 1s linear;
+            transition: 1s ease;
         }
         &:hover span{
             transform: translateY(-50px);
-            transition: 1s linear;
+            transition: 1s ease;
         }
 
     }
     h3{
         color: white;
-        
+        position: absolute;
     }
     span{
         color: #b9b8b9;
         font-size: .9em;
+        position: absolute;
+        bottom: -40px;
         
     }
 

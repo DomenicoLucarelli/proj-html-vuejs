@@ -8,7 +8,7 @@ export default {
     data() {
         return {
             store,
-
+            // array di oggetti per le cards
             cards: [
                 {
                     image:'img/project-1.jpg',
@@ -70,7 +70,7 @@ export default {
         <ProjectsNav></ProjectsNav>
 
         <div class="cards-container">
-
+            <!-- creo tante card quanti sono gli elementi dell'array cards passo le info tramite props e passo la classe active solo alle card che hanno nelle correspondence un valore uguale al'indice dell'elemento cliccato in ProjectsNav -->
             <ProjectsCard v-for="(card, index) in cards" :key="index" :img="card.image" :title="card.title" :text="card.des" :back="card.correspondence.includes(store.navIndex) ? 'active' : 'not-active'"></ProjectsCard>
 
         </div>
