@@ -1,4 +1,6 @@
 <script>
+import { baseCompile } from '@vue/compiler-core';
+
 export default {
     name: 'AppMessage',
     data() {
@@ -20,11 +22,24 @@ export default {
             // controllo se l'utente non lascia gli input vuoti
             if(this.userName != '' && this.userEmail !='' && this.userTel !='' && this.userInfo !='' && this.userMessage !=''){
 
-                this.isClick = !this.isClick
+                this.isClick = true
+
+               
             }else{
                 // se li lascia vuoti compare un alert
                 alert('completa tutti i campi per inviare il messaggio')
             }
+        },
+        // funzione che resetta gli input
+        reset(){
+            this.isClick = false
+
+            this.userName = ''
+            this.userEmail = ''
+            this.userTel = ''
+            this.userInfo = 'More Info'
+            this.userMessage = ''
+
         }
     },
 }
@@ -77,7 +92,7 @@ export default {
                     Your message has been send.
                 </span>
 
-                <button class="btn1" @click="changeVisibility()">Send Another message</button>
+                <button class="btn1" @click="reset()">Send Another message</button>
                 
             </div>
             
