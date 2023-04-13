@@ -118,7 +118,7 @@ export default {
                 </div>
             </div>
 
-            <button class="btn2 ">VIEW MAP</button>
+            <button class="btn2 " > <a href="https://www.google.it/maps/place/Via+Ragusa,+54,+70024+Gravina+in+Puglia+BA/@40.8145358,16.4221734,17.21z/data=!4m6!3m5!1s0x13387bf62e9d84bb:0x375935a18793c7e1!8m2!3d40.8151331!4d16.4254943!16s%2Fg%2F11fphl_2xk">VIEW MAP</a></button>
 
 
         </div>
@@ -246,6 +246,15 @@ export default {
         
         .btn2{
             align-self: flex-start;
+
+            &:hover a{
+                color: white;
+            }
+
+            a{
+                color: #058283;
+                
+            }
         }
     }
 
