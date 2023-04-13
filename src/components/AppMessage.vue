@@ -19,6 +19,8 @@ export default {
             if(this.userName != '' && this.userEmail !='' && this.userTel !='' && this.userInfo !='' && this.userMessage !=''){
 
                 this.isClick = !this.isClick
+            }else{
+                alert('completa tutti i campi per inviare il messaggio')
             }
         }
     },
@@ -40,15 +42,15 @@ export default {
 
             </div>
 
-            <div class="input-box" v-if="isClick == false">
+            <form class="input-box" v-if="isClick == false" >
 
-                <input type="text" placeholder="Name" v-model="userName" >
+                <input type="text" placeholder="Name" v-model="userName" require>
 
-                <input type="email" placeholder="Email" v-model="userEmail">
+                <input type="email" placeholder="Email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" v-model="userEmail" validate="required:true" required>
 
-                <input type="tel" placeholder="Phone" v-model="userTel">
+                <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Phone" v-model="userTel" required>
 
-                <select  v-model="userInfo">
+                <select  v-model="userInfo" >
 
                     <option selected>More Info</option>
 
@@ -60,11 +62,11 @@ export default {
 
                 </select>
 
-                <input type="text" size="50" placeholder="Message" v-model="userMessage">
+                <input type="text" size="50" placeholder="Message" v-model="userMessage" required>
 
-            </div>
+            </form>
 
-            <button class="btn1" @click="changeVisibility()" v-if="isClick == false">SEND</button>
+            <button id="btn" type="submit" class="btn1" @click="changeVisibility()" v-if="isClick == false">SEND</button>
 
             <div class="alert" v-if="isClick == true">
                 <span>
